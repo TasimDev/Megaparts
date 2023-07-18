@@ -16,7 +16,10 @@
                     colors: {
                         primary: '#16242E',
                         secondary: '#1C2D3A',
-                        sky: '#008AEE'
+                        sky: '#008AEE',
+                        textBlue: '#231F20',
+                        green: '#33BB5A'
+
                     }
                 }
 
@@ -29,6 +32,7 @@
 </head>
 
 <body>
+    <!--NAV-->
     <div id="nav">
         <div id="top" class="bg-primary">
             <div class="container mx-[1.36rem] flex justify-between items-center py-[12px] lg:mx-auto">
@@ -367,7 +371,113 @@
             </div>
         </div>
     </div>
-    </div>
+    <!--MAIN-->
+    <main id="main">
+        <div class="container mx-auto mt-[62px]">
+            <div id="header" class="flex justify-between items-center mb-[2rem]">
+                <div class="title flex flex-col justify-center gap-[16px]">
+                    <h1 class="text-4xl font-bold leading-[42px] text-textBlue">Направи запитване лесно и бързо!</h1>
+                    <div>
+                        <span class="text-green text-[26px] font-bold leading-[18px]">1821</span>
+                        <span class="text-neutral-600 text-xl font-normal leading-[18px]">активни клиентски
+                            запитвания</span>
+                    </div>
+                </div>
+                <div class="btn-primary bg-green text-white text-base font-medium h-full rounded-[50px] flex gap-[7.53px] px-[2.8rem] py-[.8rem] cursor-pointer"
+                    id="btn-query">
+                    <div class="icon">
+                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14 2.64038C16 2.64038 17 3.55229 17 5.37612V11.7415C17 13.5382 15.59 14.2334 13.86 13.2944L12.54 12.5721C12.24 12.4096 11.76 12.4096 11.46 12.5721L10.14 13.2944C8.41 14.2334 7 13.5382 7 11.7415V5.37612C7 3.55229 8 2.64038 10 2.64038H14Z"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M6.82 5.33995C3.41 5.8546 2 7.75066 2 11.5789V14.3146C2 18.8742 4 20.698 9 20.698H15C20 20.698 22 18.8742 22 14.3146V11.5789C22 7.68745 20.54 5.78237 17 5.31287"
+                                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="text">
+                        Направи запитване
+                    </span>
+                </div>
+            </div>
+            <div id="filters-menu">
+                <div class="title flex justify-between items-center">
+                    <div class="text-textBlue text-3xl font-bold leading-[38px]">Филтри</div>
+                    <div class="flex justify-center items-center gap-[7px]" id="btn-restore-filters">
+                        <div class="icon">
+                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.5471 3.59829C9.93085 3.41413 9.25085 3.29371 8.50001 3.29371C5.1071 3.29371 2.35876 6.04204 2.35876 9.43496C2.35876 12.835 5.1071 15.5833 8.50001 15.5833C11.8929 15.5833 14.6413 12.835 14.6413 9.44204C14.6413 8.18121 14.2588 7.00538 13.6071 6.02788M9.37835 1.41663L11.4254 3.76829L9.03835 5.51079"
+                                    stroke="#008AEE" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="text-sky text-base font-medium underline">Изчисти филтрите</span>
+                    </div>
+                </div>
+                <form action="#" id="filters" class="flex flex-wrap gap-[10px]">
+                    <select id="brand" name="brand" data-action="/">
+                        <option value="">Марка</option>
+                        <optgroup label="Популярни марки">
+                            <option value="audi">Audi</option>
+                            <option value="alfa-romeo">Alfa Romeo</option>
+                            <option value="bmw">BMW</option>
+                            <option value="citroen">Citroen</option>
+                            <option value="toyota">Toyota</option>
+                            <option value="volkswagen">Volkswagen</option>
+                        </optgroup>
+                        <optgroup label="Други марки">
+                            <option value="chevrolet">Chevrolet</option>
+                            <option value="chrysler">Chrysler</option>
+                            <option value="dacia">Dacia</option>
+                            <option value="daewoo">Daewoo</option>
+                            <option value="daihatsu">Daihatsu</option>
+                            <option value="dodge">Dodge</option>
+
+                        </optgroup>
+                    </select>
+                    <select id="category" name="category" data-action="/">
+                        <option value="">Категория</option>
+                        <optgroup label="Горивна систем">
+                            <option value="diesel">Дизел</option>
+                            <option value="benzin">Бензин</option>
+                            <option value="gas">Газ</option>
+                            <option value="dyuzi-benzin">Дюзи бензин</option>
+                            <option value="dyuzi-dizel">Дюзи дизел</option>
+
+                        </optgroup>
+                        <optgroup label="Спирачна система">
+                            <option value="disk">Дискове</option>
+                            <option value="sevro">Серво</option>
+                            <option value="barabani">Барабани</option>
+                            <option value="abs">ABS</option>
+                        </optgroup>
+                        <optgroup label="Светлини">
+                            <option value="ksenon">Ксенон</option>
+                            <option value="krushki">Крушки</option>
+                            <option value="farove">Фарове</option>
+                        </optgroup>
+                    </select>
+                    <select id="city" name="city" data-action="/">
+                        <option value="">Населено място</option>
+                        <option value="diesel">Силистра</option>
+                        <option value="benzin">Русе</option>
+                        <option value="gas">Варна</option>
+                        <option value="dyuzi-benzin">софия</option>
+                        <option value="dyuzi-dizel">Шумен</option>
+                    </select>
+                    <select class="cursor-not-allowed" id="model" name="model" data-action="/" disabled>
+                        <option value="">Модел</option>
+                    </select>
+                    <select class="cursor-not-allowed" id="podcategory" name="podcategory" data-action="/" disabled>
+                        <option value="">Подкатегория</option>
+                    </select>
+                    <button type="submit">Приложи</button>
+                </form>
+            </div>
+        </div>
+    </main>
     <script src="./script.js"></script>
 </body>
 

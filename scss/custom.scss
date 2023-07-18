@@ -20,6 +20,7 @@ body {
     max-width: 1200px;
 }
 
+/***************NAV***************/
 #nav {
     #top {
         .hamburger {
@@ -63,6 +64,12 @@ body {
 
             .left {
                 gap: 0.62rem;
+                overflow-x: auto;
+                overflow-y: hidden;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
 
                 @media (max-width:700px) {
                     gap: 0
@@ -75,7 +82,7 @@ body {
                     letter-spacing: 0;
                     white-space: nowrap;
                     text-decoration: none;
-                    font-weight: 500;
+
                     font-size: 18px;
                     line-height: 24px;
                     height: 37px;
@@ -224,4 +231,31 @@ body {
     .container.active {
         display: flex;
     }
+}
+
+/***************MAIN**************/
+#main {
+    #filters-menu {
+
+        width: 100%;
+        margin-bottom: 10px;
+        box-shadow: rgba(0, 0, 0, .15) 2px 3px 20px;
+        padding: 20px 20px 30px;
+        background: #fff;
+        border-radius: 20px;
+
+        #filters {
+            width: 100%;
+
+            select {
+                width: calc(100%/3);
+                border-radius: 1.875rem;
+                border: 1px solid #008AEE;
+                box-shadow: inset 0px 0px 0px 6px rgba(0, 138, 238, 0.15);
+                padding: 0.79rem 1.62rem;
+            }
+
+        }
+    }
+
 }
