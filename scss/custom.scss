@@ -12,9 +12,6 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    overflow-x: hidden;
-}
 
 .container {
     max-width: 1200px;
@@ -243,19 +240,81 @@ body {
         padding: 20px 20px 30px;
         background: #fff;
         border-radius: 20px;
+        margin-bottom: 26px;
 
         #filters {
             width: 100%;
 
-            select {
-                width: calc(100%/3);
+
+            select,
+            button {
+                width: 32.6%;
                 border-radius: 1.875rem;
-                border: 1px solid #008AEE;
-                box-shadow: inset 0px 0px 0px 6px rgba(0, 138, 238, 0.15);
-                padding: 0.79rem 1.62rem;
+                border: 1px solid #008bee;
+                padding: 0.6rem 1.62rem;
             }
+
+            select {
+                position: relative;
+                appearance: none;
+            }
+
 
         }
     }
 
+    #wrapper {
+        #left {
+            width: 20%;
+          
+            .buttons {
+                margin-bottom: 24px;
+            }
+
+            .menu {
+                li {
+                    padding-top: 15px;
+
+                    &:first-child {
+                        border-top: 1px solid #C1C1C1;
+                    }
+
+                    &:nth-child(4) {
+                        border-bottom: 1px solid #C1C1C1;
+                        padding-bottom: 15px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 52px;
+                    }
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 11px;
+                    }
+                }
+            }
+        }
+
+        #right {
+            width: 80%;
+        }
+    }
+
+}
+
+//CUSTOM CSS
+
+.btn-primary {
+    height: 45px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #008AEE;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
 }
