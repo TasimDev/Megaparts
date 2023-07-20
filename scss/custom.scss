@@ -266,7 +266,7 @@ html {
     #wrapper {
         #left {
             width: 20%;
-          
+
             .buttons {
                 margin-bottom: 24px;
             }
@@ -302,6 +302,33 @@ html {
         }
     }
 
+}
+
+#main {
+    #wrapper {
+        #right {
+
+            select,
+            button {
+                width: 186px;
+                border-radius: 1.875rem;
+                border: 1px solid #008bee;
+                padding: 0.6rem 1.62rem;
+
+            }
+
+            select {
+                position: relative;
+                appearance: none;
+            }
+
+            .bottom {
+                .cart {
+                    width: calc(100%/2);
+                }
+            }
+        }
+    }
 }
 
 //CUSTOM CSS

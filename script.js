@@ -14,3 +14,4 @@ hamburgerBtn.addEventListener("click", () => {
         hamburgerBtn.innerHTML = `<span class="icon text-white text-2xl font-bold cursor-pointer"> &#10005;</span>`
     }
 })
+

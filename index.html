@@ -7,6 +7,8 @@
 
     <title>Авточасти MEGAPARTS </title>
     <!--Using tailwind css with CDNJS-->
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./cartitem.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./scss/custom.css">
     <script>
@@ -477,7 +479,7 @@
                         class="bg-sky color text-white text-base font-medium leading-[18px]">Приложи</button>
                 </form>
             </div>
-            <div id="wrapper">
+            <div id="wrapper" class="flex justify-between gap-[34px]">
                 <div id="left" class="flex flex-col">
                     <div class="buttons flex flex-col justify-center items-center gap-[10px] ">
                         <a href="/" class="btn-primary w-full">Поръчки</a>
@@ -588,20 +590,128 @@
                             </a>
                         </li>
                     </ul>
-                    <a class="ad rounded-[10px] bg-zinc-100 w-[195px]">
-                        <div class="title flex items-center justify-between ">
+                    <a class="ad rounded-[10px] bg-zinc-100 w-[195px] p-[14px]">
+                        <div class="title flex items-center justify-between mb-[19px]">
                             <span
                                 class="text text-center text-neutral-400 text-base font-medium leading-[18px]">Ad</span>
                             <div class="icon rotate-90 text-center text-neutral-400 text-base font-bold leading-[18px]">
                                 ...</div>
                         </div>
+                        <div class="image rounded-[10px] overflow-hidden">
+                            <div class="image h-[267px]">
+                                <img class=" w-full h-full object-cover"
+                                    src="https://s3-alpha-sig.figma.com/img/5781/b523/2b3fa72c28c159ea6eb03c9e50aa57b1?Expires=1690761600&Signature=M0IhDFhHqCUC0iTNIgpBZphmxyciPVDyluVbLWctKcU-VFzsBjybq3jha1XPbdZKwJqw~FD528T8FCzCas1XorBqTqcqTfyUv6Pph8Skc7~UhtyH6O-JVcvqcmUfL6Q~Lyu4q0ribPGD-Y8p0jZwR1~ui2IPa15p0f9P9ZGyPtHuetbZvpzuCfP1IwV3lkX4Rp2f8gQsZf6ydAubzxhYXwJKwsNwFHjgeRuqms9QwOqBHgMZiGrsHHAzP-kfGFPH-4OT3MIz2Jawm8hZ35KusG2dZLJBfVlJluBX6uhH6LfFQEmdsJBwkQr7aliWt2fx6tBa2pEOBolVjp7~khIIRw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+                            </div>
+                            <div class="h-[127px] text-center flex justify-center items-center bg-red-700">
+                                <span class="text-white text-xl font-bold uppercase leading-relaxed"> Открийте <br>
+                                    своята <br>
+                                    нова кола!
+                                </span>
+                            </div>
+                            <div class="image">
+                                <img class="w-full h-full object-contain"
+                                    src="https://s3-alpha-sig.figma.com/img/8455/bd3c/166480a0d8e4513921393c0f0008c109?Expires=1690761600&Signature=KL5RQ7Y3IraDKoTB3RhhGueqeO3NGz15sPspgDShCTuz5l~FffYw79c36vGRxNeLZIFMMLe6xNdihly2yH79gcjGN~IaTirSczYD8pz4W2IYtbapHWqiu02qWip11SY3n66-UJwB06GCvkLSKt11reMxTnycJ8Lsw9uLo1IpEctVAgcA9j7HAcvS-rwjZmsq6BxlyfMI7N6gAunJXLpwwr8vnUBAxTZ6Bpr5X-ADSaN~q442t68d100JMLZlGuh2psdp0SmFt8xilHtL-5yN~nvpDDY9dtVkrF2RJuPWcBrQHDNlK83SPrrHUVouqDN42p4SJQ0YYoaDoq-mmA4VXg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+                            </div>
+                            <div class="h-40 bg-red-700 flex justify-center items-center">
+                                <div
+                                    class="w-[114.67px] h-[75px] bg-gray-200 rounded-[10px] flex justify-center items-center">
+                                    <div class="text-center text-stone-900 text-xl font-black uppercase leading-normal">
+                                        Научете повече</div>
+                                </div>
+                            </div>
+                        </div>
                     </a>
                 </div>
-                <div id="right"></div>
+                <div id="right">
+                    <div class="top flex justify-between items-center mb-[38px]">
+                        <div class="filters flex items-center gap-[20px]">
+                            <select id="type" name="type" data-action="/"
+                                class="text-neutral-500 text-base font-medium leading-normal">
+                                <option value="newest" selected>Най-нови</option>
+                                <option value="oldest">Най-стари</option>
+                                <option value="nooffers">Без оферти</option>
+                            </select>
+                            <a href="/" class="flex gap-[6px]">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.89 5.08C14.02 4.82 13.06 4.65 12 4.65C7.21 4.65 3.33 8.53 3.33 13.32C3.33 18.12 7.21 22 12 22C16.79 22 20.67 18.12 20.67 13.33C20.67 11.55 20.13 9.89 19.21 8.51M13.24 2L16.13 5.32L12.76 7.78"
+                                            stroke="#008AEE" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M15 17L11.9608 15.3116C11.4314 15.0196 11 14.3168 11 13.7419V10"
+                                            stroke="#008AEE" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <span class="text-sky text-base font-medium underline leading-normal">Обнови списъка с
+                                    обяви</span>
+                            </a>
+                        </div>
+                        <div class="info flex justify-evenly items-center gap-[18px] mr-[23px]">
+                            <div class="info-item flex justify-center items-center gap-[4px]">
+                                <div class="icon w-[27px] h-[27px]">
+                                    <img src="https://s3-alpha-sig.figma.com/img/26ef/44bd/dbd0e817703bd6abaa544f53e0c62faf?Expires=1690761600&Signature=Cv4UAQbnhAtZR8Ba9XzWEf~DlITo7P0ubPh8JHJ9-l7Ges7B1l-x-G2HnLfdcpYuEshgFyIEgFQkIu9EmlJ3rMe3U6c7ncb3KtyaHapHhsUYwDXAlYgrEy1jM9XkHtqLk-YUimrSAqtmk7-e26TVoAhfT2o0qXKXWyI-mAE7y7e~N1iQQsnwfG2L~l7G7jnDCKwiaC93piMT1JBAwBCDRAvwzfPeVsvdqEHURqUz85QIizwIpybDAyYJdqZEc3bK8q4bp7n5BoBBEikRtJrJ5or4reRE75xBS31xlEJonBICKWh9Lz3IB~Lig6eiYigbWBJaLJ2xYmYt3FNWQuat2Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                        alt="/">
+                                </div>
+
+                                <span class="text-sky text-[26px] font-bold">120</span>
+                            </div>
+                            <div class="info-item flex justify-center items-center gap-[4px]">
+                                <div class="icon w-[27px] h-[27px]">
+                                    <img src="https://s3-alpha-sig.figma.com/img/3286/9e7c/5c999aa903ce7d4e4e65c64995b962b1?Expires=1690761600&Signature=U6ijoFWORKFvU5QwdNGUp0wiyS-Il7r1WclpzoYhj2BPxv2SAc5w0YUJuWFe40HJZJ0ossSbkWDWCoyecPNVsO7NNKht9RlyE5Dnj~zllLrO3grE8tK8lcG6eF2Djlk-tBBfmHxisHuy9dmue7E8Y5-u6~xS8JLHcaW7VES47x9kANHYMuyZ-KPNrEnNiaKuZY36MpTOYFQ69Xul0uCEztO4qktMj3MvnDJPxJztYuqyI9Nf9qA7QPh01vNDeVcjsApVdKYL8z2uisuYq~MOgK0SI9MQ9bs3~sDfgTgKKlNSC7QVz-v75NjBwMhE86Of1q7v2554wqm1aihCu9s5lw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                        alt="/">
+                                </div>
+
+                                <span class="text-sky text-[26px] font-bold">10</span>
+                            </div>
+                            <div class="info-item flex justify-center items-center gap-[4px]">
+                                <div class="icon w-[27px] h-[27px]">
+                                    <img src="https://s3-alpha-sig.figma.com/img/ad1c/a7d5/fad7c40b0070e459bc29838791927587?Expires=1690761600&Signature=Sfle60YVhZDmw5hgtsNQV-FZX8XjJCekI8KyA5ffSq9j8FZxkREYQTmIzdBOKMHIB3uD9y4x6696ZCe83B~7HgZ8r3-U6XYa7Wlth3wkImW0aAWHJ4B7dxlftkb-p4RMySTWm4FyJbZU13rZPUAsfKLNKOwCR368VaeHFjojkO6YhewNqyguNcArDWni61~R1oZ4~-sSn41YDVume~sykFb4wOx2-Z2sz-zrxg2BiS6YmBs~Ka3CwzkiwSiAYaWl3G91fjUfhKuiLJG~Q79jMhxhfB1KGke7Z0QUG698cy7XjQtzyG4JqhZOn8MNPIP55UTDiSHnopRfe60bD86huA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                        alt="/">
+                                </div>
+
+                                <span class="text-sky text-[26px] font-bold">123</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="cart">
+                            <header id="header">
+                                <div class="images w-full flex justify-between gap-[10px] mb-[15px]">
+                                    <div
+                                        class="image-primary relative w-auto w-[75%] overflow-hidden rounded-[20px] h-[229px]">
+                                        <img src="https://s3-alpha-sig.figma.com/img/67b8/1863/cb9aff7f286bf6afe8cfe6cc14eb5385?Expires=1690761600&Signature=BiXrE8EqeXnl-cVOXjuLI3aEdnocK4FSLPctJs7r0yPVrvKMMAWMeYQ2i1aIYyZy8Vi9TZYXEU0QmNRGOlWODE8GVATbW6erktW3t1Ftdlj-r8ZLoicR7JpQV1QVBsv1Pf2pGpe6673J7ZcIJWnI6LVo11eNxSiDokzooWwGZbi2gpgPzSqfuUgJ1302~hWwmrQeneXvxn2THHcepV7MYOrS0WzZzhbCHVgl8CquKauKX158NuPhPtc4OR1LvElorhMOPWIpjCVro~PgrUp3MYn~inRMW5D~v7ur~aBZVrZ-pWg5qlFxGCmJpkmHflHFcESZb~CPnRSH4MvHTPbIqw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                            alt="/" class="w-full h-full object-cover">
+                                        <span
+                                            class="absolute top-[10px] right-[11px] rounded-[50px] text py-[3px] px-[13px] bg-[#FD3541] text-center text-white text-xs font-semibold leading-[18px]">Примерна
+                                            снимка
+                                        </span>
+                                        <div class="icon absolute bottom-[14px] right-[16px]">
+                                            <img src="./assets/heart.png" alt="/">
+                                        </div>
+                                    </div>
+                                    <div class="images-secondary w-[25%] flex flex-col gap-[10px]">
+                                        <div class="image rounded-[10px] h-[69px]  overflow-hidden">
+                                            <img src="https://s3-alpha-sig.figma.com/img/67b8/1863/cb9aff7f286bf6afe8cfe6cc14eb5385?Expires=1690761600&Signature=BiXrE8EqeXnl-cVOXjuLI3aEdnocK4FSLPctJs7r0yPVrvKMMAWMeYQ2i1aIYyZy8Vi9TZYXEU0QmNRGOlWODE8GVATbW6erktW3t1Ftdlj-r8ZLoicR7JpQV1QVBsv1Pf2pGpe6673J7ZcIJWnI6LVo11eNxSiDokzooWwGZbi2gpgPzSqfuUgJ1302~hWwmrQeneXvxn2THHcepV7MYOrS0WzZzhbCHVgl8CquKauKX158NuPhPtc4OR1LvElorhMOPWIpjCVro~PgrUp3MYn~inRMW5D~v7ur~aBZVrZ-pWg5qlFxGCmJpkmHflHFcESZb~CPnRSH4MvHTPbIqw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                                alt="/">
+                                        </div>
+                                        <div class="image rounded-[10px] h-[69px] overflow-hidden">
+                                            <img src="https://s3-alpha-sig.figma.com/img/67b8/1863/cb9aff7f286bf6afe8cfe6cc14eb5385?Expires=1690761600&Signature=BiXrE8EqeXnl-cVOXjuLI3aEdnocK4FSLPctJs7r0yPVrvKMMAWMeYQ2i1aIYyZy8Vi9TZYXEU0QmNRGOlWODE8GVATbW6erktW3t1Ftdlj-r8ZLoicR7JpQV1QVBsv1Pf2pGpe6673J7ZcIJWnI6LVo11eNxSiDokzooWwGZbi2gpgPzSqfuUgJ1302~hWwmrQeneXvxn2THHcepV7MYOrS0WzZzhbCHVgl8CquKauKX158NuPhPtc4OR1LvElorhMOPWIpjCVro~PgrUp3MYn~inRMW5D~v7ur~aBZVrZ-pWg5qlFxGCmJpkmHflHFcESZb~CPnRSH4MvHTPbIqw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                                alt="/">
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+        </div>
     </main>
-    <script src="./script.js"></script>
+
 </body>
 
 </html>
