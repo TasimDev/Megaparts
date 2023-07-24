@@ -1,6 +1,9 @@
 const hamburgerBtn = document.querySelector("#hamburger-menu-btn");
 const mobileNav = document.querySelector("#mobile .container")
-
+const filtersBtn = document.querySelector("#filters-btn");
+const filtertsMenu = document.querySelector("#filters-menu");
+const menuBtn = document.querySelector("#btn-menu");
+const menu = document.querySelector("#menu");
 hamburgerBtn.addEventListener("click", () => {
     mobileNav.classList.toggle("active");
     hamburgerBtn.classList.toggle("active");
@@ -13,5 +16,12 @@ hamburgerBtn.addEventListener("click", () => {
     } else {
         hamburgerBtn.innerHTML = `<span class="icon text-white text-2xl font-bold cursor-pointer"> &#10005;</span>`
     }
+})
+filtersBtn.addEventListener('click', () => {
+    filtertsMenu.classList.toggle("active");
+    console.log('clicked')
+})
+menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
 })
 

@@ -7,7 +7,7 @@
 
     <title>Авточасти MEGAPARTS </title>
     <!--Using tailwind css with CDNJS-->
-    <script type="module" src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <script type="module" src="./cartitem.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./scss/custom.css">
@@ -375,14 +375,30 @@
     </div>
     <!--MAIN-->
     <main id="main">
-        <div class="container mx-auto mt-[62px]">
+        <div class="container mx-auto ">
             <div id="header" class="flex justify-between items-center mb-[2rem]">
-                <div class="title flex flex-col justify-center gap-[16px]">
+                <div class="title flex flex-col justify-center gap-[16px] ">
                     <h1 class="text-4xl font-bold leading-[42px] text-textBlue">Направи запитване лесно и бързо!</h1>
-                    <div>
-                        <span class="text-green text-[26px] font-bold leading-[18px]">1821</span>
-                        <span class="text-neutral-600 text-xl font-normal leading-[18px]">активни клиентски
-                            запитвания</span>
+                    <div class="texts">
+                        <div class="text ">
+                            <span class="text-green text-lg font-bold leading-[18px] sm:text-[26px]">1821</span>
+                            <span class="text-neutral-600 text-xs font-normal leading-[18px] sm:text-xl">активни
+                                клиентски
+                                запитвания</span>
+                        </div>
+                        <div class="icon" id="filters-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3.35001 2H12.25C12.99 2 13.6 2.61 13.6 3.35V4.83C13.6 5.37 13.26 6.04 12.93 6.38L10.03 8.94C9.63001 9.28 9.36001 9.95 9.36001 10.49V13.39C9.36001 13.79 9.09001 14.33 8.75001 14.54L7.81001 15.15C6.93001 15.69 5.72001 15.08 5.72001 14V10.43C5.72001 9.96 5.45001 9.35 5.18001 9.01L2.62001 6.31C2.28001 5.97 2.01001 5.37 2.01001 4.96V3.41C2.00001 2.61 2.61001 2 3.35001 2Z"
+                                    stroke="#008AEE" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M2 12V15C2 20 4 22 9 22H15C20 22 22 20 22 15V8.99999C22 5.87999 21.22 3.91999 19.41 2.89999C18.9 2.60999 17.88 2.38999 16.95 2.23999M13 13H18M11 17H18"
+                                    stroke="#008AEE" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
                 <div class="btn-primary bg-green text-white text-base font-medium h-full rounded-[50px] flex gap-[7.53px] px-[2.8rem] py-[.8rem] cursor-pointer"
@@ -404,8 +420,8 @@
             </div>
             <div id="filters-menu">
                 <div class="title flex justify-between items-center mb-[14px]">
-                    <div class="text-textBlue text-3xl font-bold leading-[38px]">Филтри</div>
-                    <div class="flex justify-center items-center gap-[7px]" id="btn-restore-filters">
+                    <div class="text-textBlue text-2xl sm:text-3xl font-bold leading-[38px]">Филтри</div>
+                    <div class="flex justify-center items-center gap-[7px] cursor-pointer" id="btn-restore-filters">
                         <div class="icon">
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -418,74 +434,136 @@
                         <span class="text-sky text-base font-medium underline">Изчисти филтрите</span>
                     </div>
                 </div>
+
                 <form action="#" id="filters" class="flex flex-wrap gap-[10px] w-[100%]">
-                    <select id="brand" name="brand" data-action="/">
-                        <option value="">Марка</option>
-                        <optgroup label="Популярни марки">
-                            <option value="audi">Audi</option>
-                            <option value="alfa-romeo">Alfa Romeo</option>
-                            <option value="bmw">BMW</option>
-                            <option value="citroen">Citroen</option>
-                            <option value="toyota">Toyota</option>
-                            <option value="volkswagen">Volkswagen</option>
-                        </optgroup>
-                        <optgroup label="Други марки">
-                            <option value="chevrolet">Chevrolet</option>
-                            <option value="chrysler">Chrysler</option>
-                            <option value="dacia">Dacia</option>
-                            <option value="daewoo">Daewoo</option>
-                            <option value="daihatsu">Daihatsu</option>
-                            <option value="dodge">Dodge</option>
+                    <div class="options">
+                        <select id="brand" name="brand" data-action="/">
+                            <option value="">Марка</option>
+                            <optgroup label="Популярни марки">
+                                <option value="audi">Audi</option>
+                                <option value="alfa-romeo">Alfa Romeo</option>
+                                <option value="bmw">BMW</option>
+                                <option value="citroen">Citroen</option>
+                                <option value="toyota">Toyota</option>
+                                <option value="volkswagen">Volkswagen</option>
+                            </optgroup>
+                            <optgroup label="Други марки">
+                                <option value="chevrolet">Chevrolet</option>
+                                <option value="chrysler">Chrysler</option>
+                                <option value="dacia">Dacia</option>
+                                <option value="daewoo">Daewoo</option>
+                                <option value="daihatsu">Daihatsu</option>
+                                <option value="dodge">Dodge</option>
+                            </optgroup>
+                        </select>
+                        <div class="icon">
+                            <svg width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector 21" d="M1 1.37109L8.5 7.69093L16 1.37109" stroke="#231F20"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </svg>
 
-                        </optgroup>
-                    </select>
-                    <select id="category" name="category" data-action="/">
-                        <option value="">Категория</option>
-                        <optgroup label="Горивна систем">
-                            <option value="diesel">Дизел</option>
-                            <option value="benzin">Бензин</option>
-                            <option value="gas">Газ</option>
-                            <option value="dyuzi-benzin">Дюзи бензин</option>
-                            <option value="dyuzi-dizel">Дюзи дизел</option>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <select id="category" name="category" data-action="/">
+                            <option value="">Категория</option>
+                            <optgroup label="Горивна систем">
+                                <option value="diesel">Дизел</option>
+                                <option value="benzin">Бензин</option>
+                                <option value="gas">Газ</option>
+                                <option value="dyuzi-benzin">Дюзи бензин</option>
+                                <option value="dyuzi-dizel">Дюзи дизел</option>
+                            </optgroup>
+                            <optgroup label="Спирачна система">
+                                <option value="disk">Дискове</option>
+                                <option value="sevro">Серво</option>
+                                <option value="barabani">Барабани</option>
+                                <option value="abs">ABS</option>
+                            </optgroup>
+                            <optgroup label="Светлини">
+                                <option value="ksenon">Ксенон</option>
+                                <option value="krushki">Крушки</option>
+                                <option value="farove">Фарове</option>
+                            </optgroup>
+                        </select>
+                        <div class="icon">
+                            <svg width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector 21" d="M1 1.37109L8.5 7.69093L16 1.37109" stroke="#231F20"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </svg>
 
-                        </optgroup>
-                        <optgroup label="Спирачна система">
-                            <option value="disk">Дискове</option>
-                            <option value="sevro">Серво</option>
-                            <option value="barabani">Барабани</option>
-                            <option value="abs">ABS</option>
-                        </optgroup>
-                        <optgroup label="Светлини">
-                            <option value="ksenon">Ксенон</option>
-                            <option value="krushki">Крушки</option>
-                            <option value="farove">Фарове</option>
-                        </optgroup>
-                    </select>
-                    <select id="city" name="city" data-action="/">
-                        <option value="">Населено място</option>
-                        <option value="diesel">Силистра</option>
-                        <option value="benzin">Русе</option>
-                        <option value="gas">Варна</option>
-                        <option value="dyuzi-benzin">софия</option>
-                        <option value="dyuzi-dizel">Шумен</option>
-                    </select>
-                    <select class="cursor-not-allowed" id="model" name="model" data-action="/" disabled>
-                        <option value="">Модел</option>
-                    </select>
-                    <select class="cursor-not-allowed" id="podcategory" name="podcategory" data-action="/" disabled>
-                        <option value="">Подкатегория</option>
-                    </select>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <select id="city" name="city" data-action="/">
+                            <option value="">Населено място</option>
+                            <option value="diesel">Силистра</option>
+                            <option value="benzin">Русе</option>
+                            <option value="gas">Варна</option>
+                            <option value="dyuzi-benzin">софия</option>
+                            <option value="dyuzi-dizel">Шумен</option>
+                        </select>
+                        <div class="icon">
+                            <svg width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector 21" d="M1 1.37109L8.5 7.69093L16 1.37109" stroke="#231F20"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="options  deactive">
+                        <select id="model" name="model" data-action="/" disabled>
+                            <option value="">Модел</option>
+                        </select>
+                        <div class="icon">
+                            <svg width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector 21" d="M1 1.37109L8.5 7.69093L16 1.37109" stroke="#231F20"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="options deactive">
+                        <select id="podcategory" name="podcategory" data-action="/" disabled>
+                            <option value="">Подкатегория</option>
+                        </select>
+                        <div class="icon">
+                            <svg width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="Vector 21" d="M1 1.37109L8.5 7.69093L16 1.37109" stroke="#231F20"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </svg>
+
+                        </div>
+                    </div>
+
                     <button type="submit"
-                        class="bg-sky color text-white text-base font-medium leading-[18px]">Приложи</button>
+                        class="bg-sky color text-white text-base font-medium leading-[18px] btn-primary"
+                        style="width: calc(96%/3);">Приложи</button>
+
                 </form>
             </div>
+
             <div id="wrapper" class="flex justify-between">
                 <div id="left" class="flex flex-col mr-[7px]">
-                    <div class="buttons flex flex-col justify-center items-center gap-[10px] ">
-                        <a href="/" class="btn-primary w-full">Поръчки</a>
-                        <a href="/" class="btn-primary w-full">Моите запитвания</a>
+                    <div
+                        class="buttons flex flex-row  items-start sm:flex-col sm:items-center  justify-center  gap-[10px] ">
+                        <a href="/" class="btn-primary sm:text-base text-sm">Поръчки</a>
+                        <a href="/" class="btn-primary sm:text-base text-sm">Моите запитвания</a>
+                        <div id="btn-menu"
+                            class="border border-sky h-[45px] rounded-full flex justify-center items-center">
+                            <svg width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1.37085L8.5 7.69068L16 1.37085" stroke="#008AEE" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
                     </div>
-                    <ul class="menu flex flex-col">
+                    <ul id="menu" class="menu flex flex-col">
                         <li>
                             <a href="/">
                                 <div class="icon">
@@ -590,6 +668,7 @@
                             </a>
                         </li>
                     </ul>
+                    <div class="line w-[92%] h-[1px] bg-[#C1C1C1]  self-center justify-self-center"></div>
                     <a class="ad rounded-[10px] bg-zinc-100 w-[195px] p-[14px]">
                         <div class="title flex items-center justify-between mb-[19px]">
                             <span
@@ -624,13 +703,27 @@
                 </div>
                 <div id="right">
                     <div class="top flex justify-between items-center mb-[38px] pl-[22px]">
-                        <div class="filters flex items-center gap-[20px]">
-                            <select id="type" name="type" data-action="/"
-                                class="text-neutral-500 text-base font-medium leading-normal">
-                                <option value="newest" selected>Най-нови</option>
-                                <option value="oldest">Най-стари</option>
-                                <option value="nooffers">Без оферти</option>
-                            </select>
+                        <div class="filters flex items-center justify-between gap-[20px]">
+                            <div class="options gap-[45px]" style="width: auto;">
+                                <select id="type" name="type" data-action="/"
+                                    class="text-neutral-500 text-base font-medium leading-normal">
+                                    <option value="newest" selected>Най-нови</option>
+                                    <option value="oldest">Най-стари</option>
+                                    <option value="nooffers">Без оферти</option>
+                                </select>
+                                <div class="icon">
+                                    <svg width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Vector 21" d="M1 1.37109L8.5 7.69093L16 1.37109" stroke="#231F20"
+                                            stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="option-mobile">
+                                <div class="option active" id="news">Най-нови</div>
+                                <div class="option" id="nooffers">Без оферта</div>
+                                <div class="option" id="olds">Най-стари</div>
+                            </div>
                             <a href="/" class="flex gap-[6px]">
                                 <div class="icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -654,7 +747,6 @@
                                     <img src="https://s3-alpha-sig.figma.com/img/26ef/44bd/dbd0e817703bd6abaa544f53e0c62faf?Expires=1690761600&Signature=Cv4UAQbnhAtZR8Ba9XzWEf~DlITo7P0ubPh8JHJ9-l7Ges7B1l-x-G2HnLfdcpYuEshgFyIEgFQkIu9EmlJ3rMe3U6c7ncb3KtyaHapHhsUYwDXAlYgrEy1jM9XkHtqLk-YUimrSAqtmk7-e26TVoAhfT2o0qXKXWyI-mAE7y7e~N1iQQsnwfG2L~l7G7jnDCKwiaC93piMT1JBAwBCDRAvwzfPeVsvdqEHURqUz85QIizwIpybDAyYJdqZEc3bK8q4bp7n5BoBBEikRtJrJ5or4reRE75xBS31xlEJonBICKWh9Lz3IB~Lig6eiYigbWBJaLJ2xYmYt3FNWQuat2Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
                                         alt="/">
                                 </div>
-
                                 <span class="text-sky text-[26px] font-bold">120</span>
                             </div>
                             <div class="info-item flex justify-center items-center gap-[4px]">
@@ -675,7 +767,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bottom">
+                    <div class="bottom mb-[287px]">
                         <div class="carts  flex flex-wrap gap-[2px] mb-[62px]">
                             <div id="1" class="cart py-[22px] px-[19px] rounded-[20px] bg-white hover:shadow ">
                                 <header id="header">
@@ -1590,8 +1682,48 @@
                                 </header>
                             </div>
                         </div>
-                    </div>
+                        <div class="adjustments flex justify-center items-center">
+                            <div class="wrapper flex gap-[28px]">
+                                <div id="back"
+                                    class="w-[45px] h-[45px] rounded-full bg-sky bg-opacity-20 border border-sky flex justify-center items-center cursor-pointer">
+                                    <svg class="rotate-90" width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Vector 21" d="M1 1.37109L8.5 7.69093L16 1.37109" stroke="#FFF"
+                                            stroke-width="2" stroke-linecap="round" />
+                                    </svg>
 
+                                </div>
+                                <div
+                                    class="pages text-black text-base font-medium leading-[18px] flex items-center gap-[13px]">
+                                    <span class="text">стр.</span>
+                                    <div class="options w-[105px]">
+                                        <select name="pages" id="pages">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                        <div class="icon absolute right-[19px]">
+                                            <svg width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path id="Vector 21" d="M1 1.37109L8.5 7.69093L16 1.37109"
+                                                    stroke="#231F20" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                    <span id="page"> от 2</span>
+                                </div>
+                                <div id="forward"
+                                    class="w-[45px] h-[45px] rounded-full bg-sky bg-opacity-20 border border-sky flex justify-center items-center cursor-pointer">
+                                    <svg class="-rotate-90" width="17" height="9" viewBox="0 0 17 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="Vector 21" d="M1 1.37109L8.5 7.69093L16 1.37109" stroke="#FFF"
+                                            stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
